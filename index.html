@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventastico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Zona 1: Barra superior -->
+    <header>
+        <div class="logo">EVENT<span class="punto">•</span>ASTICO</div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">¿Cómo funciona?</a>
+            <a href="#">Ayuda</a>
+        </nav>
+        <div class="botones-header">
+            <button class="btn-registro">Registro</button>
+            <button class="btn-crear" onclick="crearEvento()">Crear Evento</button>
+        </div>
+    </header>
+
+    <!-- Zona 2: Mapa -->
+    <section class="zona-mapa">
+        <img id="mapa" src="img/mapa-1.png" alt="Mapa de eventos cercanos">
+    </section>
+
+    <!-- Zona 3: Filtros -->
+    <section class="filtros">
+        <div class="pestanas">
+            <button class="pestana activa">Eventos cercanos</button>
+            <button class="pestana" onclick="cambiarMapa()">Nuevos Eventos</button>
+        </div>
+        <div class="buscador">
+            <input type="text" id="busqueda" placeholder="Buscar Eventos">
+            <button onclick="buscarEvento()">buscar</button>
+        </div>
+        <div class="ordenar">
+            <select>
+                <option>Ordenar por Relevancia</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Zona 4: Eventos -->
+    <main class="contenedor-eventos">
+        <article class="tarjeta">
+            <div class="wireframe-img">
+                <img src="img/evento-tecnologia.jpg" alt="Congreso de Tecnología" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="info-tarjeta">
+                <div class="fecha">
+                    <span class="dia">10</span>
+                    <span class="mes">may</span>
+                </div>
+                <div class="detalle-evento">
+                    <h2>Congreso de Tecnología</h2>
+                    <p class="asistencia" onclick="sumarAsistentes('asistentes1')">
+                        Asistentes: <img src="img/asistentes.png" alt="icono"> <span id="asistentes1">5</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <div class="wireframe-img">
+                <img src="img/evento-verano.jpg" alt="Fiesta de verano" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="info-tarjeta">
+                <div class="fecha">
+                    <span class="dia">15</span>
+                    <span class="mes">jul</span>
+                </div>
+                <div class="detalle-evento">
+                    <h2>Fiesta de verano</h2>
+                    <p class="asistencia" onclick="sumarAsistentes('asistentes2')">
+                        Asistentes: <img src="img/asistentes.png" alt="icono"> <span id="asistentes2">10</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tarjeta">
+            <div class="wireframe-img">
+                <img src="img/evento-navidad.jpg" alt="Posada navideña" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="info-tarjeta">
+                <div class="fecha">
+                    <span class="dia">18</span>
+                    <span class="mes">dic</span>
+                </div>
+                <div class="detalle-evento">
+                    <h2>Posada navideña</h2>
+                    <p class="asistencia" onclick="sumarAsistentes('asistentes3')">
+                        Asistentes: <img src="img/asistentes.png" alt="icono"> <span id="asistentes3">8</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
